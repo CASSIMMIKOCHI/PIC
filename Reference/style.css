@@ -1,0 +1,322 @@
+:root {
+    --textColor: #f67f0c;
+    --anotherColor: #0075c9;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: row;
+    padding-top: 1em;
+}
+
+header .logo {
+    font-size: 2em;
+    color: var(--textColor);
+    text-transform: uppercase;
+    padding-left: 2em;
+    margin-bottom: .3em;
+    /* background-color: #fbfbfbfb; */
+}
+
+header .navigation-wrapper {
+    display: grid;
+    grid-template-columns: .7fr  .7fr;
+    grid-template-areas: ".. nav-menu";
+    align-content: center;
+    background-color: var(--anotherColor);
+    padding: 1em 0;
+}
+
+.navigation-menu {
+    grid-area: nav-menu;
+    display: grid;
+    grid-auto-flow: column;
+    list-style-type: none;
+}
+
+.navigation-menu li {
+    position: relative;
+}
+
+.navigation-menu .link {
+    font-size: 1rem;
+    color: #f6f6f3;
+    text-transform: uppercase;
+    text-decoration: none;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    padding: 1em; 
+    transition:  background-color .3s ease;
+}
+
+.navigation-menu .link:hover {
+    background-color: #055b9cc2;
+}
+
+.navigation-menu .inside-menu {
+    background-color: #f67f0c;
+    list-style-type: none;
+    padding: .5em 1.35em;
+    position: absolute;
+    bottom: -85px;
+    border-bottom-left-radius: 5px;
+    transform: scale(1, 0);
+    z-index: 1;
+    transform-origin: top;
+    transition: transform .2s ease;
+}
+.navigation-menu .inside-menu li {
+	
+}
+
+.navigation-menu .inside-menu a {
+    font-size: .9rem;
+    color: #f6f6f3;
+    text-transform: capitalize;
+	text-decoration: none;
+	border-bottom: 1px solid whitesmoke;
+	padding-bottom: .1em;
+    display: inline-block;
+    margin-bottom: .5em;
+}
+/* shwoing the inside menu */
+.navigation-menu li:hover .inside-menu {
+    transform: scale(1, 1);
+}
+
+/* home section as the first page*/
+.home-section {
+    height: 80vh;
+    background-image: linear-gradient(rgb(0, 0, 0, .4), rgba(0, 0, 0, .7)), url(pexels-cottonbro-4065864.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.home-section p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 2;
+    font-size: 1.4rem;
+    color: #c4c1b1;
+    text-align: center;
+}
+
+.stake-holders {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .4);
+    padding: .5em 0;
+}
+
+.stake-holders figure {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 5em;
+    align-items: center;
+}
+
+.stake-holders figure img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    display: inline-block;
+    
+}
+/* fro every section to be added*/ 
+section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* services section */
+.services-wrapper {
+    padding: 3em 2em;
+    background-color: rgb(235, 231, 231);
+}
+
+.services-wrapper h2 {
+    color: #033e68c4;
+    text-align: center; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+
+.services-wrapper .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1em;
+}
+
+.services-wrapper .service {
+    padding: 1em;
+    padding-bottom: 4em;
+    background-color: #fffafa;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+}
+
+/* fas icon */
+.fas {
+    color: var(--anotherColor);
+    font-size: 5em;
+    margin-bottom: .5em;
+    padding: .2em .1em;
+    border-radius: 50%;
+    border: 8px solid var(--anotherColor);
+}
+
+.services-wrapper .service p {
+    color: #0a0a0a;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* form section properties*/
+main {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    place-content: center;
+}
+
+#form-sign-in {
+    background-color: #eaeceacc;
+    border-radius: 4px;
+    display: grid;
+    grid-auto-flow: row;
+    padding-bottom: 2em;
+    border-radius: 10px;
+}
+
+.form-heading {
+    color: #ebeae6;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* you have to import google fonts */
+    background-color: var(--anotherColor);
+    padding: .8em 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.member-information {
+    padding: 1em;
+    padding-top: 2.2em;
+}
+
+.member-sign-in {
+    margin-bottom: 1.5em;
+}
+.member-sign-in .join{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: .2em;
+    padding-left: 1em;
+}
+
+.member-sign-in label {
+    font-size: .9rem;
+    font-style: italic;
+}
+
+/* for all links  */
+a:any-link {
+    outline: none;
+}
+/* log in */
+.log-in-link {
+    font-size: 1rem;
+    color: var(--anotherColor);
+    text-decoration: none;
+    text-transform: capitalize;
+    padding-left: .3em;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.log-in-link:hover,
+.log-in-link:focus {
+    color: #f67d0cc4;
+    text-decoration: underline                                      ;                                      ;
+}
+
+.member-information input{
+    display: block;
+    width: 100%;
+    padding: 2em 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+    border: none;
+    border: 1.5px solid #0a0a0a;
+    outline: none;
+    border-radius: 35px;
+}
+.member-information input:focus {
+    border: 1.5px solid #f67f0c;
+}
+::placeholder {
+    text-transform: uppercase;
+    color: rgb(117, 116, 116);
+    transition: all .2s ease;
+    transform: translate(15px, 0);
+}
+.member-information input:focus::placeholder{
+    font-size: .75rem;
+    transform: translate(15px, -25px);
+}
+/* signing in */
+.member-log-in {
+    display: grid;
+    /* background-color: red; */
+    justify-items: center;
+    padding: 0 1em;
+}
+.signing-in {
+    color: #f1f1f1;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: var(--anotherColor);
+    padding: .6em .5em;
+    border-radius: 30px;
+    margin-bottom: .5em;
+    transition: background-color .2s ease;
+    outline: 2px solid transparent !important;
+}
+
+.signing-in:hover {
+   background-color: transparent; 
+   outline: 2px solid var(--anotherColor) !important;
+   color: var(--textColor);
+}
+.member-log-in p {
+    opacity: .8;
+    font-size: small;
+    text-align: center;
+}
+
+.member-log-in p span {
+    color: #f67f0c;
+}
